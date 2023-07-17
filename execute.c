@@ -18,7 +18,7 @@ int execute(char *argv, char **av)
 	if (strcmp(command, "exit") == 0)
 	{
 		free_tokens(av);
-		exit(0)
+		exit(0);
 	}
 	else if (strcmp(command, "env") == 0)
 	{

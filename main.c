@@ -9,7 +9,7 @@ void prompt(void)
 {
 	if (isatty(STDIN_FILENO))
 	{
-		char promptStr[] = "$ ";
+		char promptStr[] = "$Shell >> ";
 
 		write(STDOUT_FILENO, promptStr, sizeof(promptStr) - 1);
 	}
