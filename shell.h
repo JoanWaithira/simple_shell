@@ -11,14 +11,17 @@
 #define BUFF_SIZE 1024
 
 void print_environment(void);
-int execute(char *argv, char **av);
-int _putchar(char c);
+int execute(char *program_name, char **args);
 char *get_command_location(const char *command);
+char *find_command_in_path(const char *command, const char *path);
+char *build_full_path(const char *directory, const char *command, int length);
+void execute_custom_command(char *program_name, char **args);
+void execute_env(void);
+void execute_exit(char **args);
 void prompt(void);
 int main(int argc, char **argv);
 char **tokenize(char *str);
 void free_tokens(char **arguments);
-void prompt(void);
 
 extern char **environ;
 #endif

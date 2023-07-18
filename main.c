@@ -33,16 +33,22 @@ int main(int argc, char **argv)
 	while (1)
 	{
 		prompt();
+
 		status = getline(&buffer, &length, stdin);
 		if (status == -1)
 		{
-			free(buffer);
-			exit(0);
+			perror("Error reading input");
+			break;
 		}
-		argument = tokenize(buffer);
-		if (argument == NULL)
-			continue;
+		buffer[strcspn(buffer, "\n")] = '\0';
 
+		argument = tokenize(buffer);
+
+		if (argument == NULL)
+		{
+			free(buffer);
+			continue;
+		}
 		execute(argv[0], argument);
 
 		free_tokens(argument);
