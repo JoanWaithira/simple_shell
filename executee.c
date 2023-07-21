@@ -35,9 +35,13 @@ int execute(char *program_name, char **args)
  */
 void execute_exit(char **args)
 {
+	int status = 0;
+
+	if (args[1] != NULL)
+		status = atoi(args[1]);
 	free_tokens(args);
 	printf("You are exiting the shell. So sad to see you go :(\n");
-	exit(0);
+	exit(status);
 }
 
 /**
