@@ -20,8 +20,8 @@ void execute_env(void)
 
 /**
  * execute_command - A function to execute othet commands
- * @argv - Argument vector
- * @av - Argument
+ * @argv: Argument vector
+ * @av: Argument
  */
 
 void execute_command(char *argv, char **av)
@@ -59,12 +59,13 @@ void execute_command(char *argv, char **av)
 			}
 		}
 	}
-	free (command_path);
+	free(command_path);
 }
 /**
  * execute - A function that executes commands
  * @argv: argument vector
  * @av: arguments
+ * Return: Always 0 (Success)
  */
 
 int execute(char *argv, char **av)
@@ -78,7 +79,7 @@ int execute(char *argv, char **av)
 	if (strcmp(command, "exit") == 0)
 	{
 	execute_exit(av);
-	}	
+	}
 	else if (strcmp(command, "env") == 0)
 	{
 		print_environment();
@@ -86,6 +87,6 @@ int execute(char *argv, char **av)
 	else
 	{
 		execute_command(argv, av);
-	}	
+	}
 	return (0);
 }
