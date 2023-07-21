@@ -22,6 +22,9 @@ void prompt(void);
 int main(int argc, char **argv);
 char **tokenize(char *str);
 void free_tokens(char **arguments);
+ssize_t _getline(char **line);
+ssize_t refill_buffer(char *buffer, ssize_t *pos, ssize_t *bytes_read);
+int read_char(char *buffer, ssize_t *pos, ssize_t bytes_read);
 
 extern char **environ;
 #endif
