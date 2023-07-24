@@ -54,10 +54,8 @@ ssize_t _getline(char **line)
 			{
 				*line = malloc(n + 1);
 				if (!*line)
-				{
 					perror("Memory allocation error");
 					return (-1);
-				}
 				for (i = 0; i < n; i++)
 					(*line)[i] = buffer[i];
 				(*line)[n] = '\0';
@@ -71,10 +69,8 @@ ssize_t _getline(char **line)
 		{
 			*line = malloc(n + 1);
 			if (!*line)
-			{
 				perror("Memory allocation error");
 				return (-1);
-			}
 			for (i = 0; i < n; i++)
 				(*line)[i] = buffer[i];
 			(*line)[n] = '\0';
