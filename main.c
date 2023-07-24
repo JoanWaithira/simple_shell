@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 		status = getline(&buffer, &length, stdin);
 		if (status == -1)
 		{
-			perror("Error reading input");
+			perror("Goodbye..");
 			break;
 		}
 		buffer[strcspn(buffer, "\n")] = '\0';
