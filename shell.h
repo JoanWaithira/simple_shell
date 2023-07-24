@@ -29,6 +29,9 @@ int read_char(char *buffer, ssize_t *pos, ssize_t bytes_read);
 int cd(char **args, char *current_dir, int current_dir_size);
 int shell_setenv(char **args);
 int shell_unsetenv(char **args);
+char *expand_variables(char *token);
+int last_status;
+
 
 extern char **environ;
 #endif

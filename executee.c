@@ -11,6 +11,7 @@ int execute(char *program_name, char **args)
 {
 	char *command = args[0];
 	char current_dir[PATH_MAX];
+	char *semicolon_pos = strchr(command, ';');
 
 	if (command == NULL)
 		return (0);
@@ -37,6 +38,10 @@ int execute(char *program_name, char **args)
 	{
 		if (cd(args, current_dir, sizeof(current_dir)) != 0)
 			return (1);
+	}
+	else if (semicolon_pos != NULL)
+	{
+		*semicolon_pos = '\0';
 	}
 	else
 	{
