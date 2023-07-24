@@ -7,6 +7,7 @@
 #include <string.h>
 #include <sys/wait.h>
 #include <sys/types.h>
+#include <limits.h>
 
 #define BUFF_SIZE 1024
 
@@ -25,6 +26,9 @@ void free_tokens(char **arguments);
 ssize_t _getline(char **line);
 ssize_t refill_buffer(char *buffer, ssize_t *pos, ssize_t *bytes_read);
 int read_char(char *buffer, ssize_t *pos, ssize_t bytes_read);
+int cd(char **args, char *current_dir, int current_dir_size);
+int shell_setenv(char **args);
+int shell_unsetenv(char **args);
 
 extern char **environ;
 #endif

@@ -10,6 +10,7 @@
 int execute(char *program_name, char **args)
 {
 	char *command = args[0];
+	char current_dir[PATH_MAX];
 
 	if (command == NULL)
 		return (0);
@@ -21,6 +22,21 @@ int execute(char *program_name, char **args)
 	else if (strcmp(command, "env") == 0)
 	{
 		execute_env();
+	}
+	else if (strcmp(command, "setenv") == 0)
+	{
+		if (shell_setenv(args) != 0)
+			return (1);
+	}
+	else if (strcmp(command, "unsetenv") == 0)
+	{
+		if (shell_unsetenv(args) != 0)
+			return (1);
+	}
+	else if (strcmp(command, "cd") == 0)
+	{
+		if (cd(args, current_dir, sizeof(current_dir)) != 0)
+			return (1);
 	}
 	else
 	{

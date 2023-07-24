@@ -32,7 +32,6 @@ int read_char(char *buffer, ssize_t *pos, ssize_t bytes_read)
 	}
 	return (buffer[(*pos)++]);
 }
-
 /**
  * _getline - function to read input from the user
  * @line: Pointer to a buffer to store the input line
