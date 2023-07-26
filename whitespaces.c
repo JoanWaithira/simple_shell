@@ -1,7 +1,8 @@
 #include "shell.h"
 
 /**
- * trim_whitespaces- A function to remove bpoth leading and trailing white spaces
+ * trim_whitespaces- A function to remove bpoth leading and trailing
+ * white spaces
  * @str: The command inputted
  */
 

@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 			break;
 		}
 		buffer[strcspn(buffer, "\n")] = '\0';
-		trim_whitespaces(buffer);	
+		trim_whitespaces(buffer);
 
 		argument = tokenize(buffer);
 
