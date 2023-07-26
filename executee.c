@@ -82,14 +82,14 @@ void execute_custom_command(char *program_name, char **args)
 {
 	char *command = args[0];
 	pid_t pid;
-	char *command_path;
+	char *command_path = NULL;
 	int status;
 
 	command_path = get_command_location(command);
 
 	if (command_path == NULL)
 	{
-		fprintf(stderr, "%s: %s: command not found\n", program_name, command);
+		fprintf(stderr, "%s: %s: not found\n", program_name, command);
 		return;
 	}
 

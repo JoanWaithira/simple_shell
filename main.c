@@ -37,7 +37,6 @@ int main(int argc, char **argv)
 		status = getline(&buffer, &length, stdin);
 		if (status == -1)
 		{
-			perror("Goodbye..");
 			free(buffer);
 			break;
 		}
