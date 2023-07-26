@@ -8,6 +8,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <limits.h>
+#include <ctype.h>
 
 #define BUFF_SIZE 1024
 
@@ -31,6 +32,7 @@ int shell_setenv(char **args);
 int shell_unsetenv(char **args);
 char *expand_variables(char *token);
 int last_status;
+void trim_whitespaces(char *str);
 
 
 extern char **environ;
