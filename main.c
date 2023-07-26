@@ -38,6 +38,7 @@ int main(int argc, char **argv)
 		if (status == -1)
 		{
 			perror("Goodbye..");
+			free(buffer);
 			break;
 		}
 		buffer[strcspn(buffer, "\n")] = '\0';
