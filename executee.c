@@ -61,6 +61,9 @@ void execute_exit(char **args)
 	if (args[1] != NULL)
 	{
 		status = atoi(args[1]);
+
+		free(args[1]);
+		args[1] = NULL;
 	}
 	free_tokens(args);
 	exit(status);
