@@ -59,7 +59,17 @@ void execute_exit(char **args)
 	int status = 0;
 
 	if (args[1] != NULL)
-		status = atoi(args[1]);
+	{
+		char *endptr;
+
+		status = strtol(args[1], &endptr, 10);
+
+		if (*endptr != '\0')
+		{
+			printf("Invalid argument: %s\n", args[1]);
+			status = 1;
+		}
+	}
 	free_tokens(args);
 	exit(status);
 }
