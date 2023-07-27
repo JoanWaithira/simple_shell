@@ -60,15 +60,9 @@ void execute_exit(char **args)
 
 	if (args[1] != NULL)
 	{
-		char *endptr;
+		status = atoi(args[1]);
 
-		status = strtol(args[1], &endptr, 10);
-
-		if (*endptr != '\0')
-		{
-			printf("Invalid argument: %s\n", args[1]);
-			status = 1;
-		}
+		free(args[1]);
 	}
 	free_tokens(args);
 	exit(status);
