@@ -61,7 +61,6 @@ void execute_exit(char **args)
 	if (args[1] != NULL)
 		status = atoi(args[1]);
 	free_tokens(args);
-	printf("You are exiting the shell. So sad to see you go :(\n");
 	exit(status);
 }
 
