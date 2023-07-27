@@ -62,8 +62,11 @@ void execute_exit(char **args)
 	{
 		status = atoi(args[1]);
 
-		free(args[1]);
-		args[1] = NULL;
+		if (status == 0 && strcmp(args[1], "0") != 0)
+		{
+			fprintf(stderr, "Invalid exit status: %s\n", args[1]);
+			status = 2;
+		}
 	}
 	free_tokens(args);
 	exit(status);
